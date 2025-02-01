@@ -1,0 +1,49 @@
+---
+title: "pl2003_OriginalHomeworkCode_01"
+output: html_document
+date: "2025-02-01"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x<- c("Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed")
+strsplit(x, ",")
+m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)
+x<-m[,c(2,3,6)]
+x
+x<-m[6:8,]
+x<-m[2:6,2:9]
+a <- array(data = 400:1, dim = c(5, 5, 4,4))
+a[1, 1, 1, 2]
+a[2, 3, 2, ]
+a[1:5, 1:5, 3, 3]
+Catarrhini <- c("Cercopithecidae", "Hylobatidae", "Hominidae")
+Platyrrhini <- c("Cebidae", "Atelidae", "Pitheciidae")
+Anthropoidea <- list (Catarrhini, Platyrrhini) 
+names(Anthropoidea) <- list ("Catarrhini", "Platyrrhini")
+Anthropoidea
+
+Tarsioidea <- c ("Tarsiidae")
+
+Haplorhini<- list("Tarsioidea", "Anthropoidea")
+names (Haplorhini) <- list ("Tarsioidea", "Anthropoidea" )
+
+Lemuroidea <- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae", "Daubentoniidae")
+Lorisoidea <- c("Lorisidae", "Galagidae")
+Strepsirhini <- list(Lemuroidea, Lorisoidea)
+names (Strepsirhini) <- list("Lemuroidea", "Lorisoidea")
+
+Primates <- list(Haplorhini, Strepsirhini)
+names(Primates) <- list("Haplorhini", "Strepsirhini")
+Primates
+
+m3 <- matrix(data = c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2), nrow = 5, ncol = 3, byrow = TRUE)
+m3
+df <- data.frame(m3)
+colnames(df) <- c("col1", "col2", "col3")
+df$col2 <- as.logical(df$col2)
+df$col3 <- as.factor(df$col3)
+str(df)
+```
+
+
