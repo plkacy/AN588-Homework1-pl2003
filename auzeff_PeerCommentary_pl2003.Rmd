@@ -1,0 +1,77 @@
+---
+title: "pl2003_OriginalHomeworkCode_01"
+output: html_document
+date: "2025-02-01"
+---
+
+## Challenge 1
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x<- c("Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed")
+strsplit(x, ",")
+```
+
+> This code isn't quite accomplishing the challenge.  You'll want your strsplit() to divide at spaces rather than commas so that you can divide it into the inidvidual words.  Once you do that, you'll be able to extract every third word.
+
+# Challenge 2
+
+```{r}
+m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)
+x<-m[,c(2,3,6)]
+x
+x<-m[6:8,]
+x<-m[2:6,2:9]
+```
+
+> The latter two are a simpler and more efficient way of getting the answer than I did!
+
+## Challenge 3
+
+```{r}
+a <- array(data = 400:1, dim = c(5, 5, 4,4))
+a[1, 1, 1, 2]
+a[2, 3, 2, ]
+a[1:5, 1:5, 3, 3]
+```
+
+## Challenge 4
+
+```{r}
+Catarrhini <- c("Cercopithecidae", "Hylobatidae", "Hominidae")
+Platyrrhini <- c("Cebidae", "Atelidae", "Pitheciidae")
+Anthropoidea <- list (Catarrhini, Platyrrhini) 
+names(Anthropoidea) <- list ("Catarrhini", "Platyrrhini")
+Anthropoidea
+
+Tarsioidea <- c ("Tarsiidae")
+
+Haplorhini<- list("Tarsioidea", "Anthropoidea")
+names (Haplorhini) <- list ("Tarsioidea", "Anthropoidea" )
+
+Lemuroidea <- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae", "Daubentoniidae")
+Lorisoidea <- c("Lorisidae", "Galagidae")
+Strepsirhini <- list(Lemuroidea, Lorisoidea)
+names (Strepsirhini) <- list("Lemuroidea", "Lorisoidea")
+
+Primates <- list(Haplorhini, Strepsirhini)
+names(Primates) <- list("Haplorhini", "Strepsirhini")
+Primates
+```
+
+## Challenge 5
+
+```{r}
+m3 <- matrix(data = c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2), nrow = 5, ncol = 3, byrow = TRUE)
+m3
+df <- data.frame(m3)
+colnames(df) <- c("col1", "col2", "col3")
+df$col2 <- as.logical(df$col2)
+df$col3 <- as.factor(df$col3)
+str(df)
+```
+
+> Adding column names is a nice touch that I missed in my code.
+
+***
+> Most of our code was quite similar.  I think that there might have been a bit of confusion on what Challenge 1 consisted of, but that's about it.  However, I can't follow along with your thought process as you haven't left any comments on the code.  In addition, having all of the code in one chunk made it more difficult to figure out where one challenge ended and another began, and made it so that I had to highlight specific lines to run--I split it into the individual challenges and labeled them here.  Overall, your code is excellent and more streamlined in places than what I made; I'd largely just suggest annotating it and adding some of the formatting options given in Module 3 to make it more navigable and intelligible.
